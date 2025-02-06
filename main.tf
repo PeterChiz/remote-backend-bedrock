@@ -1,25 +1,20 @@
-# Định nghĩa AWS resource
+# main.tf
 terraform {
+  cloud {
+    organization = "Basic_Infrastructure"
+    workspaces {
+      name = "remote-backend-bedrock"
+    }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
       version = "5.49.0"
     }
   }
-  
-}
-# terraform { 
-#   cloud { 
-    
-#     organization = "dev-CSC-lab" 
-
-#     workspaces { 
-#       name = "Dev-lab" 
-#     } 
-#   } 
-# }
-
-provider "aws"{
-    region = "us-east-1"
 }
 
+provider "aws" {
+  region = "us-east-1"
+}
