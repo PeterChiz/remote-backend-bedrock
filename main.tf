@@ -19,11 +19,11 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_instance" "vm_01" {
+resource "aws_instance" "vm-user1" {
   ami = "ami-04b6019d38ea93034"
   instance_type = "t2.micro"
   tags = {
-    Name = "vm_01"
+    Name ="vm-user1"
   }
 }
 
