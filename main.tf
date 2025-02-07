@@ -19,6 +19,14 @@ provider "aws" {
   region = "us-east-1"
 }
 
+resource "aws_instance" "vm_01" {
+  ami = "ami-04b6019d38ea93034"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "vm_01"
+  }
+}
+
 # Gắn IAM Policy với IAM Role
 resource "aws_iam_role_policy_attachment" "bedrock_policy_attachment" {
   role       = aws_iam_role.bedrock_access_role.name
