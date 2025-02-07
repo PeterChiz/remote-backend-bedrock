@@ -18,3 +18,9 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 }
+
+# Gắn IAM Policy với IAM Role
+resource "aws_iam_role_policy_attachment" "bedrock_policy_attachment" {
+  role       = aws_iam_role.bedrock_access_role.name
+  policy_arn = aws_iam_policy.bedrock_policy.arn
+}
