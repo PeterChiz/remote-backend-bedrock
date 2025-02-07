@@ -26,8 +26,8 @@ resource "aws_iam_role_policy_attachment" "bedrock_policy_attachment" {
 }
 
 resource "aws_instance" "vm-user1" {
-  ami           = "ami-0cff7e2a30134a3e3"  # Amazon Linux 2
-  instance_type = "t2.micro"
+  ami           = "ami-04f77c9cd94746b09"  # Amazon Linux 2
+  instance_type = "t3.micro"
   tags = {
     Name = "vm-user1"
   }
