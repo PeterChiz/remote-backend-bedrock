@@ -1,4 +1,4 @@
-# Tạo IAM Role cho dịch vụư
+# Tạo IAM Role cho dịch vụ ec2
 resource "aws_iam_role" "bedrock_access_role" {
   name = "bedrock_access_role"
 
