@@ -3,14 +3,14 @@ resource "aws_iam_role" "bedrock_access_role" {
   name = "bedrock_access_role"
 
   assume_role_policy = jsonencode({
-    "Version": "2012-10-17",
-    "Statement": [
+    "Version" : "2012-10-17",
+    "Statement" : [
       {
-        "Effect": "Allow",
-        "Principal": {
-          "Service": "ec2.amazonaws.com" 
+        "Effect" : "Allow",
+        "Principal" : {
+          "Service" : "ec2.amazonaws.com"
         },
-        "Action": "sts:AssumeRole"
+        "Action" : "sts:AssumeRole"
       }
     ]
   })
@@ -22,11 +22,11 @@ resource "aws_iam_policy" "bedrock_policy" {
   description = "Policy to allow invoking models and managing provisioned throughput in Amazon Bedrock"
 
   policy = jsonencode({
-    "Version": "2012-10-17",
-    "Statement": [
+    "Version" : "2012-10-17",
+    "Statement" : [
       {
-        "Effect": "Allow",
-        "Action": [
+        "Effect" : "Allow",
+        "Action" : [
           "bedrock:InvokeModel",
           "bedrock:InvokeModelWithResponseStream",
           "bedrock:ListModels",
@@ -36,7 +36,7 @@ resource "aws_iam_policy" "bedrock_policy" {
           "bedrock:UpdateProvisionedModelThroughput",
           "bedrock:DeleteProvisionedModelThroughput"
         ],
-        "Resource": "*"  // Nếu có ARN cụ thể của các mô hình -> thay thế "*" bằng ARN phù hợp
+        "Resource" : "*"
       }
     ]
   })

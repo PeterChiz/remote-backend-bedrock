@@ -4,4 +4,3 @@ terraform.tfstate
 terraform.tfstate.backupgit
 workshop-env/
 **/workshop-env/
-export
